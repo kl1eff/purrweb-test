@@ -1,0 +1,151 @@
+.hide-for-mobile {
+  @media (max-width: 425px) {
+    display: none !important;
+  }
+}
+
+.hide-for-desktop {
+  @media (min-width: 426px) {
+    display: none !important;
+  }
+}
+
+.button {
+  padding: 16px 30px;
+  background: transparent;
+  border: 3px solid #954CED;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  &::before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 20%;
+    
+    content: "";
+    z-index: -1;
+    transition: all 100ms ease-in-out;
+  }
+  &:hover {
+    background: transparent;
+    transform: scale(105%);
+    transition: 100ms ease-in-out transform;
+    &::before {
+      border-radius: 13px;
+      width: 100%;
+      height: 100%;
+      background: rgba(148, 76, 237, 0.349);
+    }
+  }
+}
+
+.button_white {
+  @extend .button;
+  background: #954ced !important;
+  border: 0;
+  &::before {
+    background: #181818 !important;
+  }
+}
+
+.button_blocked {
+  background: #B9B9B9 !important;
+  color: #fff;
+  cursor: default;
+  &:hover {
+    transform: scale(100%);
+    &::before {
+      width: 0;
+    }
+  }
+}
+
+.h {
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 106%;
+  @media (max-width: 765px) {
+    font-size: 40px;
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+  height: 80px !important;
+  @media (max-width: 425px) {
+    height: 60px !important;
+  }
+  background-color: rgba(34, 34, 34, 0.733) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(17px);
+}
+
+.sticky + div {
+  padding-top: 50px;
+}
+
+.rotated-block {
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 340px;
+    height: 34.44px;
+    background: #a64ced;
+    border-radius: 30px;
+    transform: rotate(-1.69deg);
+    z-index: -1;
+    @media (max-width: 765px) {
+      width: 2px;
+      bottom: 8px;
+      height: 27.44px;
+      width: 230px;
+    }
+  }
+}
+
+.p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+}
+
+.noscroll {
+  overflow: hidden;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+    background: rgba(0, 0, 0, 0.397);
+  }
+}
+
+.req {
+  position: relative;
+  &::before {
+    position: absolute;
+    left: 0;
+    bottom: -1.3rem;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: #EC1211;
+    content: 'This field is required.';
+  }
+}
