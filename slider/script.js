@@ -93,9 +93,9 @@ next.addEventListener('click', () => slide(1));
 prev.addEventListener('click', () => slide(-1));
 
 indicators.addEventListener('click', (event) => {
-  if (event.target.classList.contains('slider__indicator')) {
+  if (event.target.classList.contains('slider__indicator') && !event.target.classList.contains('current')) {
+    check();
     const location = [...indicators.children].indexOf(event.target);
-    console.log(location);
     if (index > location) slide(-1, location);
     else if (index < location) slide(1, location);
   }
