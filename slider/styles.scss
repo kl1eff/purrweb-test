@@ -1,0 +1,113 @@
+body {
+  position: relative;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  display: none;
+}
+
+button {
+  background-color: transparent;
+  border: 3px solid #ffffff;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.slider {
+  -moz-box-shadow: 4px 4px 47px -1px rgba(34, 60, 80, 0.53);
+  box-shadow: 4px 4px 47px -1px rgba(34, 60, 80, 0.53);
+  width: 600px;
+  left: 50%;
+  transform: translate(-50%);
+  height: 40%;
+  position: absolute;
+  background-color: white;
+  overflow-x: hidden;
+
+  .slider__inner {
+    position: relative;
+    left: -600px;
+    width: 10000px;
+    height: 100%;
+    max-width: none;
+    display: flex;
+    div {
+      width: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 90px;
+      font-weight: 700;
+      color: #ffffff;
+      font-family: sans-serif;
+      &:nth-child(1) {
+        background-color: rgb(119, 119, 92);
+      }
+      &:nth-child(2) {
+        background-color: rgb(83, 149, 187);
+      }
+      &:nth-child(3) {
+        background-color: rgb(80, 136, 89);
+      }
+      &:nth-child(4) {
+        background-color: rgb(124, 44, 12);
+      }
+      &:nth-child(5) {
+        background-color: rgb(128, 64, 141);
+      }
+      &:nth-child(6) {
+        background-color: rgb(119, 119, 92);
+      }
+      &:nth-child(7) {
+        background-color: rgb(83, 149, 187);
+      }
+    }
+  }
+
+  .slider__controls {
+    width: 100%;
+
+    .left {
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      left: 15px;
+    }
+    .right {
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      right: 15px;
+    }
+  }
+  .slider__indicators {
+    display: flex;
+    position: absolute;
+    width: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: space-between;
+    align-items: center;
+    bottom: 5px;
+    span {
+      transition: all 500ms;
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 1rem;
+      background-color: #ffffffc2;
+    }
+  }
+}
+
+.current {
+  width: 13px !important;
+  height: 13px !important;
+  background-color: #ffffff !important;
+}
