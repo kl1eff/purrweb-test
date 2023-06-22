@@ -28,7 +28,6 @@ const slide = (direction, target) => {
     check();
     const initial = sliderInner.offsetLeft;
     let i = initial;
-    allowMove = false;
     
 
     if (direction === 1) {
@@ -70,17 +69,15 @@ const slide = (direction, target) => {
     } else if (index !== elements.length) {
       indicators.children[index].classList.add('current');
     }
-
-    sliderInner.classList.remove('active');
   }
 };
 
 const check = () => {
   if (index === elements.length) {
-    sliderInner.style.left = '-600px';
+    sliderInner.style.left = -width + 'px';
     index = 0;
   } else if (index === -1) {
-    sliderInner.style.left = -(600 * elements.length) + 'px';
+    sliderInner.style.left = -(width * elements.length) + 'px';
     index = elements.length - 1;
   }
 
