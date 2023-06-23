@@ -149,6 +149,11 @@ html {
       div {
         padding-left: 90px;
       }
+      @media (max-width: 425px) {
+        div {
+          padding-left: 10px;
+        }
+      }
       p {
         font-weight: 600;
         font-size: 36px;
@@ -934,7 +939,7 @@ a {
   @media (max-width: 425px) {
     width: 80%;
   }
-
+  pointer-events: all;
   display: none;
   position: fixed;
   width: 417px;
@@ -1023,6 +1028,7 @@ a {
 }
 
 #thanks {
+  pointer-events: all;
   position: fixed;
   display: none;
   width: 417px;
@@ -1065,3 +1071,40 @@ a {
 .vis {
   display: block !important;
 }
+
+.menu {
+  position: absolute !important;
+  transition: 400ms ease-in;
+  .menu__close {
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: auto;
+  }
+  &, & * {
+    z-index: 15;
+  }
+  position: fixed;
+  width: 100%;
+  display: flex;
+  background: #181818;
+  height: 100vh;
+  flex-direction: column;
+  padding: 0 16px;
+  button {
+    margin-top: 150px;
+    width: 90%;
+    height: 57px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  div {
+    margin-top: 157px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
